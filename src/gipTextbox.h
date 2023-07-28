@@ -31,7 +31,7 @@ public:
 	void mouseExited();
 
 	void textboxSetup();
-	void sizerSetup(int sizerx, int sizery, int sizerw, int sizerh);
+	void drawSizer(int sizerlocationx, int sizerlocationy, int sizerw, int sizerh);
 
 private:
 	int backgroundimagex, backgroundimagey, backgroundimagew, backgroundimageh;
