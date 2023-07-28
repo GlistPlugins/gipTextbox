@@ -12,11 +12,12 @@ gipTextbox::gipTextbox() {
 }
 
 gipTextbox::~gipTextbox() {
+
 }
 
 void gipTextbox::setup() {
 	image.loadImage("rdr2.jpg");
-	sizerSetup(0, 0, 150, 500);
+	drawSizer(100, 100, 150, 500);
 	textboxSetup();
 
 }
@@ -24,13 +25,12 @@ void gipTextbox::setup() {
 void gipTextbox::draw() {
 	image.draw(backgroundimagex, backgroundimagey, backgroundimagew, backgroundimageh);
 	framesizer.draw();
+
+
 }
 
 void gipTextbox::textboxSetup() {
-
-
-
-	maintextbox.setEditable(true);
+	//maintextbox.setEditable(true);
 	framesizer.setControl(0, 0, &maintextbox);
 	framesizer.setControl(2, 2, &usertextbox);
 
@@ -38,21 +38,20 @@ void gipTextbox::textboxSetup() {
 
 
 
-void gipTextbox::sizerSetup(int sizerx, int sizery, int sizerw, int sizerh) {
-
-	backgroundimagex = sizerx;
-	backgroundimagey = sizery;
+void gipTextbox::drawSizer(int sizerlocationx, int sizerlocationy, int sizerw, int sizerh) {
+	backgroundimagex = sizerlocationx;
+	backgroundimagey = sizerlocationy;
 	backgroundimagew = sizerw;
 	backgroundimageh = sizerh;
-	framesizer.setSize(3, 3); //Sizer is divided into 3 column and .
+	framesizer.setSize(3, 3); //Sizer is divided into 3 .
 	framesizer.enableBackgroundFill(false);
 	framesizer.iscursoron = false;
 	framesizer.left = 0;
 	framesizer.top = 0;
 	framesizer.setSlotPadding(0);
-	framesizer.set(sizerx, sizery, sizerw, sizerh); // first location and the size of textbox frame.
-	framesizer.enableBorders(false); //Sinir cizgileri kapatýldý.
-	framesizer.enableResizing(false); //Boyutlari degistirilemez hale getirildi.
+	framesizer.set(sizerlocationx, sizerlocationy, sizerw, sizerh); // first location and the size of textbox frame.
+	framesizer.enableBorders(false);
+	framesizer.enableResizing(false);
 
 }
 
